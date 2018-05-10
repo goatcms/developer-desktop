@@ -6,10 +6,18 @@ A Dockerfile / docker image created for developers environment. It contains pre-
 ## Introduction
 It is based on [docker-headless-vnc-container](https://github.com/ConSol/docker-headless-vnc-container). There is description how to use vnc and novnc (webbrowser terminal).
 
+## Build docker image 
+Use this code to build devtools locally:
+```
+git clone https://github.com/goatcms/developer-desktop
+cd developer-desktop
+docker build -t spozoga/centos-devtools .
+```
+
 ## Run devtools
 Recomended way to run devtools:
 ```bash
-docker run -it --rm -p 5901:5901 -p 6901:6901 -p 80:80 -e VNC_RESOLUTION=1600x900 -e VNC_COL_DEPTH=24 -e VNC_PW=pass123 --cap-add SYS_ADMIN --cap-add DAC_READ_SEARCH -v goathome:/headless/ -v mywww:/var/www goat-devtools
+docker run -it --rm -p 5901:5901 -p 6901:6901 -p 80:80 -e VNC_RESOLUTION=1600x900 -e VNC_COL_DEPTH=24 -e VNC_PW=pass123 --cap-add SYS_ADMIN --cap-add DAC_READ_SEARCH -v goathome:/headless/ -v mywww:/var/www spozoga/centos-devtools
 ```
 
 ## VNC client
