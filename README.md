@@ -17,7 +17,7 @@ docker build -t spozoga/goatcms-developer-desktop .
 ## Run devtools
 Recomended way to run devtools:
 ```bash
-docker run -it --rm -p 5901:5901 -p 6901:6901 -p 80:80 -e VNC_RESOLUTION=1600x900 -e VNC_COL_DEPTH=24 -e VNC_PW=pass123 --cap-add SYS_ADMIN --cap-add DAC_READ_SEARCH -v goathome:/headless/ -v mywww:/var/www spozoga/goatcms-developer-desktop
+docker run -it --rm -p 5901:5901 -p 6901:6901 -p 80:80 -e VNC_RESOLUTION=1600x900 -e VNC_COL_DEPTH=24 -e VNC_PW=pass123 --cap-add SYS_ADMIN --cap-add DAC_READ_SEARCH -v goathome:/headless/ -v mywww:/var/www -v /var/run/docker.sock:/var/run/docker.sock --privileged spozoga/goatcms-developer-desktop
 ```
 
 ## VNC client
